@@ -7,7 +7,10 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const result = await Product.findAll({
-      include: [{ model: Category }, { model: Tag }],
+      include: [
+        { model: Category },
+        { model: Tag, through: ProductTag, as: 'product_info' },
+      ],
     });
     res.status(200).json(result);
   } catch (err) {
@@ -19,7 +22,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const result = await Product.findAll({
-      include: [{ model: Category }, { model: Tag }],
+      include: [
+        { model: Category },
+        { model: Tag, through: ProductTag, as: 'product_info' },
+      ],
       where: {
         id: req.params.id,
       },
