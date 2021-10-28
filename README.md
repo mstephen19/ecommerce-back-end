@@ -4,9 +4,9 @@
 
 This is a simple backend API for an e-commerce site written in Node.js, and utilizing a MySQL database. Users can create, read, update, and deleted product categories, products, tags, and product-specific tags by using the various routes offered by the API. Each route will deliver a 200 HTTP request upon success, and a 418 "I'm a teapot" error when something has gone wrong.
 
-![Image](./img/SOMEDEMOIMAGE!)
+![Image](./img/demoImg.png)
 
-### [Demo video](DEMOVIDEOHERE!!!!!!!!!!!!!!!!!)
+### [Demo video](https://watch.screencastify.com/v/u9shyMyW2jPEg3QWIEge)
 
 ## Getting Started
 
@@ -48,6 +48,93 @@ Then, navigate to [http://localhost:3001](http://localhost:3001)
 - [MySQL](https://www.mysql.com/)
 - [Express.js](https://expressjs.com/)
 - [Sequelize.js](https://sequelize.org/)
+
+## API Routes
+
+### GET
+
+- /api/categories
+- /api/categories/CATEGORYID
+- /api/products
+- /api/products/PRODUCTID
+- /api/tags
+- /api/tags/TAGID
+
+### POST
+
+- /api/categories
+
+#### Body example:
+
+```JSON
+{
+	"category_name": "test"
+}
+```
+
+- /api/products
+
+#### Body example:
+
+```JSON
+{
+	"product_name": "Basketball",
+	"price": 200.00,
+	"stock": 3,
+	"tagIds": [1, 2, 3, 4]
+}
+```
+
+- /api/tags
+
+#### Body example:
+
+```JSON
+{
+  "tag_name": "orange"
+}
+```
+
+### PUT
+
+- /api/categories/CATEGORYID
+
+#### Body example:
+
+```JSON
+{
+	"category_name": "test"
+}
+```
+
+- /api/products/PRODUCTID
+
+#### Body example:
+
+```JSON
+{
+	"product_name": "Basketball",
+	"price": 200.00,
+	"stock": 3,
+	"tagIds": [1, 2, 3, 4]
+}
+```
+
+- /api/tags/TAGID
+
+#### Body example:
+
+```JSON
+{
+  "tag_name": "orange"
+}
+```
+
+### DELETE
+
+- /api/categories/CATEGORYID
+- /api/categories/PRODUCTID
+- /api/tags/TAGID
 
 ## Features
 
