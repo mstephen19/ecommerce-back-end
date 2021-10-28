@@ -29,7 +29,7 @@ Secondly, you will need to ensure to create a MySQL database, then create a .env
 Finally, please ensure to seed your database in order to ensure for easy testing:
 
 ```
-npm seed
+npm run seed
 ```
 
 ## Using the Application
